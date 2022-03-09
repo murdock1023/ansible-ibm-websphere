@@ -5,8 +5,8 @@ Ansible playbooks for IBM WebSphere Application Server, Connections 6 and others
 
 | Playbook name                 | Status         |           Description                                        |
 |-------------------------------|----------------|--------------------------------------------------------------|
-| ibm-was-nd-complete.yml       | Complete       | Install IBM HTTP Server - 8.5.5.15  |
-| ibm-http-server-complete.yml  | Complete       | Install IBM WebSphere Application Server - Network Deployment - 8.5.5.15  |
+| ibm-was-nd-complete.yml       | Complete       | Install IBM WebSphere Application Server - Network Deployment - 8.5.5.15  |
+| ibm-http-server-complete.yml  | Complete       | Install IBM HTTP Server - 8.5.5.15  |
 | ibm-connections6.yml          | Complete       | Install IBM Connections 6.0 CR5 |
 
 # Roles
