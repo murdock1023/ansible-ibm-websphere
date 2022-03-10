@@ -1,0 +1,10 @@
+# How to Run
+#
+# ansible-playbooks -i hosts.development -k ansible-ibm-websphere/playbooks/was-dmgr-create-profile.yml
+#
+---
+- name:                    Setup Deployment Manager JVM
+  hosts:                   dmgr
+  become:                  true
+  roles:
+    - ../../roles/was-dmgr-config-jvm
