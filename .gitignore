@@ -20,4 +20,4 @@ playbooks/BB/*
 playbooks/ibm-was-nd/*BB*
 roles/BB
 roles/BB/*
-
+git.repo
