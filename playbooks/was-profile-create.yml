@@ -1,0 +1,10 @@
+# How to Run
+#
+# ansible-playbooks -i hosts.development -k ansible-ibm-websphere/playbooks/was-dmgr-create-profile.yml
+#
+---
+- name:                    Create Custom Profile
+  hosts:                   nodes
+  become:                  true
+  roles:
+    - ../roles/was-profile-create
