@@ -1,0 +1,8 @@
+[dmgr]
+was
+
+[all:vars]
+was_username=wasadmin
+was_password=wasadmin
+
+[dmgr:vars]
