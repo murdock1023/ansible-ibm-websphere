@@ -1,8 +1,27 @@
 [dmgr]
 was
 
+[nodes]
+was
+
+[all:vars]
+iim_repository_url=http://192.168.1.150/installation
+was_repository_url=http://192.168.1.150/was/8.5.5
+was_fixes_repository_url=http://192.168.1.150/was/8.5.5
+ihs_repository_url=http://192.168.1.150/was/8.5.5
+ihs_fixes_repository_url=http://192.168.1.150/was/8.5.5/FP15
+
 [all:vars]
 was_username=wasadmin
 was_password=wasadmin
 
+was_repository_url=http://192.168.56.108/was9
+was_fixes_repository_url=http://192.168.56.108/fp_was
+
+
 [dmgr:vars]
+
+
+[nodes:vars]
+was_nodename=wasNode02
+dmgr_hostname=was

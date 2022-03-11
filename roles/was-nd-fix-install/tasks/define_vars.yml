@@ -1,4 +1,11 @@
 ---
+#- name:              Use Fix Pack 9.0.5.10?
+#  set_fact:
+#    __this_files:    "{{ __was_fp_files_fp90510 }}"
+#    __version_check: "Updated to com.ibm.websphere.ND.v90_{{ __this_version }}"
+#    __product_id:    "\"id='com.ibm.websphere.ND.v90' version='{{ __this_version }}'\""
+#  when:              ( __this_version == __was_fp_version_fp90510 )
+
 - name:              Use Fix Pack 8.5.5.14?
   set_fact:
     __this_files:    "{{ __was_fp_files_fp14 }}"

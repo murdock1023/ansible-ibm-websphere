@@ -1,0 +1,38 @@
+# Install WebSphere Application Server - Network Deployment
+#
+# Variables used in this playbook that can be setup at hosts file.
+#
+---
+#- hosts:                    dmgr,was_servers
+#  become:                   true
+#  roles:
+#    - roles/was-profile-cleanup-logs
+#    - roles/was-backup-dir-pre-fixes-zip
+
+- hosts:                    dmgr
+  become:                   true
+  vars:
+    was_version:          "v90"
+    was_fp_version:       "9.0.5010.20211108_1200"
+    __this_files:
+      - { file_name: 9.0.5-WS-WAS-FP010.zip, check_sum: f67612fc02dd14e991cc0dc4790e4ad6de5e96398b34d74193b2c75876cca0b9 }
+  roles:
+    #- roles/was-dmgr-stop
+    #- roles/was-killall-java
+    #- roles/was-profile-cleanup-temps
+    - ../roles/was-nd-fix-install
+    #- roles/was-dmgr-start
+
+#- hosts:                    was_servers
+#  become:                   true
+#  serial:                   2
+#  vars:
+#    #was_fp_version:       "8.5.5012.20170627_1018"
+#  roles:
+#    - roles/was-server-stop
+#    - roles/was-nodeagent-stop
+#    - roles/was-killall-java
+#    - roles/was-profile-cleanup-temps
+#    - roles/was-nd-fix-install
+#    - roles/was-nodeagent-start
+#    - roles/was-server-start
