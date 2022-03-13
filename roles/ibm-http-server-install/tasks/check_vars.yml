@@ -5,3 +5,21 @@
     that:
     - ihs_repository_url is defined and ihs_repository_url != ''
     msg: "Set the value of 'ihs_repository_url' in the inventory file."
+
+- name: plg_repository_url should be defined
+  assert:
+    that:
+    - plg_repository_url is defined and plg_repository_url != ''
+    msg: "Set the value of 'plg_repository_url' in the inventory file."
+
+- name: wct_repository_url should be defined
+  assert:
+    that:
+    - wct_repository_url is defined and wct_repository_url != ''
+    msg: "Set the value of 'wct_repository_url' in the inventory file."
+
+- name: sdk_repository_url should be defined
+  assert:
+    that:
+    - sdk_repository_url is defined and sdk_repository_url != ''
+    msg: "Set the value of 'sdk_repository_url' in the inventory file."

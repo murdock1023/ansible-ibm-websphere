@@ -4,12 +4,18 @@ was
 [nodes]
 was
 
+[ihs_servers]
+was
+
 [all:vars]
-iim_repository_url=http://192.168.1.150/installation
-was_repository_url=http://192.168.1.150/was/8.5.5
-was_fixes_repository_url=http://192.168.1.150/was/8.5.5
-ihs_repository_url=http://192.168.1.150/was/8.5.5
-ihs_fixes_repository_url=http://192.168.1.150/was/8.5.5/FP15
+#iim_repository_url=http://192.168.1.150/installation
+#was_repository_url=http://192.168.1.150/was/8.5.5
+#was_fixes_repository_url=http://192.168.1.150/was/8.5.5
+ihs_repository_url=http://192.168.56.108/ihs
+#ihs_fixes_repository_url=http://192.168.1.150/was/8.5.5/FP15
+plg_repository_url=http://192.168.56.108/plg
+wct_repository_url=http://192.168.56.108/wct
+sdk_repository_url=http://192.168.56.108/sdk8075
 
 [all:vars]
 was_username=wasadmin

@@ -1,7 +1,14 @@
 ---
-__repository_url:       "{{ ihs_repository_url }}"
-__tmp_dir:              "{{ tmp_dir | default('/opt/IBM/Binaries') }}/wassup"
-__logs_dir:             "{{ tmp_dir | default('/opt/IBM/Binaries') }}/logs"
+__ihs_repository_url:   "{{ ihs_repository_url }}"
+__plg_repository_url:   "{{ plg_repository_url }}"
+__wct_repository_url:   "{{ wct_repository_url }}"
+__sdk_repository_url:   "{{ sdk_repository_url }}"
+__tmp_dir:              "{{ tmp_dir | default('/opt/IBM/Binaries') }}"
+__ihs_tmp_dir:          "{{ __tmp_dir }}/ihs"
+__plg_tmp_dir:          "{{ __tmp_dir }}/plg"
+__wct_tmp_dir:          "{{ __tmp_dir }}/wct"
+__sdk_tmp_dir:          "{{ __tmp_dir }}/sdk"
+__logs_dir:             "{{ __tmp_dir }}/logs"
 __iim_install_location: "{{ iim_install_location  | default('/opt/IBM/InstallationManager') }}"
 __ihs_install_location: "{{ ihs_install_location  | default('/opt/IBM/HTTPServer') }}"
 __plg_install_location: "{{ plg_install_location  | default('/opt/IBM/WebSphere/Plugins') }}"
@@ -11,12 +18,18 @@ __now:                  "{{ lookup('pipe', 'date +%Y%m%d%H%M%S') }}"
 __rsp_file:             "{{ __logs_dir }}/ihs_plg_wct.rsp"
 __log_file:             "{{ __logs_dir }}/ihs_install.{{ __now }}.log"
 __tpl_file:             "ihs_plg_wct.rsp.j2"
-__this_files:
-  - { file_name: WAS_V8.5.5_SUPPL_1_OF_3.zip, check_sum: d63c59de4a5548e3d26e71fefb76193d41ac7585bc450c1e504287e0a6f746c9 }
-  - { file_name: WAS_V8.5.5_SUPPL_2_OF_3.zip, check_sum: ac00e7ab43cc528fe7f3ccd69aeb6564a2e738e7bc6e30e71fd2e0d4bd64f39e }
-  - { file_name: WAS_V8.5.5_SUPPL_3_OF_3.zip, check_sum: 94e3d9b70b139ad5fa0578da6857b295c5d2370c1b6ecb544c1e5757406fec90 }
-__this_version:         "8.5.5000.20130514_1044"
-__product_id:           "\"id='com.ibm.websphere.IHS.v85'\""
-__version_check:        "Installed com.ibm.websphere.IHS.v85_8.5.5000"
+__ihs_files:
+  - { file_name: was.repo.9000.ihs.zip, check_sum: 13b981190168cfbdf4a57d18829dbc02fbbcf01b11f37f806a5cc4cd086a3f05 }
+__plg_files:
+  - { file_name: was.repo.9000.plugins.zip, check_sum: 86dcdc71f67fe74f307fc74d8919b567e618c7eec117f9a4d69c64024cca77b2 }
+__wct_files:
+  - { file_name: was.repo.9000.wct.zip, check_sum: 6c94685b858f1737d2cbecfb2ff9c1737db2fe119b3e64a9b7c3fbfbf21a2f7a }
+__sdk_files:
+  - { file_name: ibm-java-sdk-8.0-7.5-linux-x64-installmgr.zip, check_sum: 79c7110ceda50468ed7dd85915ca062249ebb837a0e56cf9693510461dbd5dfa }
 
+__this_version:         "{{ product_version | default('9.0.0.20160526_1854') }}"
+__java_version:         "{{ java_versioin | default('8.0.7005.20220209_1019') }}"
+
+__product_id:           "\"id='com.ibm.websphere.IHS.v90'\""
+__version_check:        "Installed com.ibm.websphere.IHS.v90_9.0.0.20160526_1854"
 __iim_product_id:       "\"id='com.ibm.cic.agent\""
