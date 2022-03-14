@@ -1,6 +1,9 @@
 ---
-__repository_url:       "{{ ihs_fixes_repository_url }}"
-__tmp_dir:              "{{ tmp_dir | default('/opt/IBM/Binaries') }}/wassup_fixes"
+__ihs_repository_url:   "{{ ihs_fixes_repository_url }}"
+__wct_repository_url:   "{{ wct_fixes_repository_url }}"
+__tmp_dir:              "{{ tmp_dir | default('/opt/IBM/Binaries') }}"
+__ihs_tmp_dir:          "{{ __tmp_dir }}/ihs_fixes"
+__wct_tmp_dir:          "{{ __tmp_dir }}/wct_fixes"
 __logs_dir:             "{{ tmp_dir | default('/opt/IBM/Binaries') }}/logs"
 __iim_install_location: "{{ iim_install_location  | default('/opt/IBM/InstallationManager') }}"
 __ihs_install_location: "{{ ihs_install_location  | default('/opt/IBM/HTTPServer') }}"
@@ -12,19 +15,20 @@ __rsp_file:             "{{ __logs_dir }}/ihs_plg_wct_fixes.rsp"
 __log_file:             "{{ __logs_dir }}/ihs_fixes_install.{{ __now }}.log"
 __tpl_file:             "ihs_plg_wct_fixes.rsp.j2"
 
-__ihs_fp_version_latest: "8.5.5015.20190128_1828"
+__ihs_fp_version_latest: "9.0.5010.20211108_1200"
 __ihs_fp_files_latest:
-  - { file_name: 8.5.5-WS-WASSupplements-FP015-part1.zip, check_sum: a27e0d5acb4459dd64a511a96be75f5aa12571cae856ab5933768c70f516ab0a }
-  - { file_name: 8.5.5-WS-WASSupplements-FP015-part2.zip, check_sum: e1d2e4891b9e185a597b56ed00564ebe2dd8f380fdd9a0895f84da2386d29737 }
-  - { file_name: 8.5.5-WS-WASSupplements-FP015-part3.zip, check_sum: 972efc31c3c653413519a0d2cd47a0039efed4b3a7997af297839699b40d7c3d }
+  - { file_name: 9.0.5-WS-IHSPLG-FP010.zip, check_sum: ce1c223e6a28d2e876a3d0f4995e1f23c5d7f0de6821f71647265e7642e6c0a6 }
+__wct_fp_files_latest:
+  - { file_name: 9.0.5-WS-WCT-FP010.zip, check_sum: 8dc866a401fb4c685e1fb5587527ecd3c61ac4f716a5fc259f5ac3c266c1330b }
 
 __this_version:         "{{ ihs_version | default( __ihs_fp_version_latest ) }}"
-__this_files:           "{{ ihs_fp_files | default( __ihs_fp_files_latest ) }}"
-__version_check:        "Updated to com.ibm.websphere.IHS.v85_{{ __this_version }}"
-__product_id:           "\"id='com.ibm.websphere.IHS.v85' version='{{ __this_version }}'\""
+__ihs_fp_files:         "{{ ihs_fp_files | default( __ihs_fp_files_latest ) }}"
+__wct_fp_files:         "{{ wct_fp_files | default( __wct_fp_files_latest ) }}"
+__version_check:        "Updated to com.ibm.websphere.IHS.v90_{{ __this_version }}"
+__product_id:           "\"id='com.ibm.websphere.IHS.v90' version='{{ __this_version }}'\""
 
 __iim_product_id:       "\"id='com.ibm.cic.agent\""
-__ihs_product_id:       "\"id='com.ibm.websphere.IHS.v85'\""
+__ihs_product_id:       "\"id='com.ibm.websphere.IHS.v90'\""
 
 
 # Old Versions

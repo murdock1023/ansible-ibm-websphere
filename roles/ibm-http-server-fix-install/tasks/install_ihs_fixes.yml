@@ -3,26 +3,44 @@
   file:          path={{ __tmp_dir }} state=absent
   ignore_errors: true
 
-- name:          Create Binaries directory
-  file:          path={{ __tmp_dir }} state=directory mode=0755
+- name:          Create IHS and Plugins Fixes Binaries directory
+  file:          path={{ __ihs_tmp_dir }} state=directory mode=0755
+
+- name:          Create WCT Fixes Binaries directory
+  file:          path={{ __wct_tmp_dir }} state=directory mode=0755
 
 - name:          Create Logs directory
   file:          path={{ __logs_dir }} state=directory mode=0755
 
-- name:          Download WAS Supplements Fixes
+- name:          Download IHS and Plugins Fixes
   get_url:
-    url:         "{{ __repository_url }}/{{ item.file_name }}"
-    dest:        "{{ __tmp_dir }}/{{ item.file_name }}"
+    url:         "{{ __ihs_repository_url }}/{{ item.file_name }}"
+    dest:        "{{ __ihs_tmp_dir }}/{{ item.file_name }}"
     mode:        0755
     checksum:    sha256:{{ item.check_sum }}
-  with_items:    "{{ __this_files }}"
+  with_items:    "{{ __ihs_fp_files }}"
 
-- name:          Extract WAS Supplements Fixes
+- name:          Download WCT Fixes
+  get_url:
+    url:         "{{ __wct_repository_url }}/{{ item.file_name }}"
+    dest:        "{{ __wct_tmp_dir }}/{{ item.file_name }}"
+    mode:        0755
+    checksum:    sha256:{{ item.check_sum }}
+  with_items:    "{{ __wct_fp_files }}"
+
+- name:          Extract IHS and Plugins Fixes
   unarchive:
-    src:         "{{ __tmp_dir }}/{{ item.file_name }}"
-    dest:        "{{ __tmp_dir }}/"
+    src:         "{{ __ihs_tmp_dir }}/{{ item.file_name }}"
+    dest:        "{{ __ihs_tmp_dir }}/"
     copy:        no
-  with_items:    "{{ __this_files }}"
+  with_items:    "{{ __ihs_fp_files }}"
+
+- name:          Extract WCT Fixes
+  unarchive:
+    src:         "{{ __wct_tmp_dir }}/{{ item.file_name }}"
+    dest:        "{{ __wct_tmp_dir }}/"
+    copy:        no
+  with_items:    "{{ __wct_fp_files }}"
 
 - name:          Generate Response file
   template:
@@ -43,8 +61,6 @@
     {{ __iim_install_location }}/eclipse/tools/imcl -acceptLicense -sVP -log {{ __log_file }} input {{ __rsp_file }}
   register:      cout
   changed_when:  (cout.stdout.find(__version_check) != -1)
-
-#- debug:        var=cout
 
 - name:          Cleanup Binaries directory
   file:          path={{ __tmp_dir }} state=absent

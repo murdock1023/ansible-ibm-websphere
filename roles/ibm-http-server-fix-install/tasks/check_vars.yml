@@ -1,7 +1,13 @@
 # check_openshift.yml
 ---
-- name: ihs_repository_url should be defined
+- name: ihs_fixes_repository_url should be defined
   assert:
     that:
-    - ihs_repository_url is defined and ihs_repository_url != ''
-    msg: "Set the value of 'ihs_repository_url' in the inventory file."
+    - ihs_fixes_repository_url is defined and ihs_fixes_repository_url != ''
+    msg: "Set the value of 'ihs_fixes_repository_url' in the inventory file."
+
+- name: wct_fixes_repository_url should be defined
+  assert:
+    that:
+    - wct_fixes_repository_url is defined and wct_fixes_repository_url != ''
+    msg: "Set the value of 'wct_fixes_repository_url' in the inventory file."
