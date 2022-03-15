@@ -1,0 +1,8 @@
+---
+- name:                    Install IBM Installation Manager
+  hosts:                   dmgr
+  #  serial:                  2
+  become:                  true
+  roles:
+    - ../roles/installation-manager-install
+

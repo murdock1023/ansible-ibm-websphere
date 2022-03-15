@@ -8,7 +8,7 @@ was
 was
 
 [all:vars]
-#iim_repository_url=http://192.168.1.150/installation
+iim_repository_url=http://192.168.56.108/iim
 #was_repository_url=http://192.168.1.150/was/8.5.5
 #was_fixes_repository_url=http://192.168.1.150/was/8.5.5
 ihs_repository_url=http://192.168.56.108/ihs
