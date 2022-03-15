@@ -9,12 +9,13 @@ was
 
 [all:vars]
 iim_repository_url=http://192.168.56.108/iim
-#was_repository_url=http://192.168.1.150/was/8.5.5
-#was_fixes_repository_url=http://192.168.1.150/was/8.5.5
+was_repository_url=http://192.168.56.108/was9
 ihs_repository_url=http://192.168.56.108/ihs
 plg_repository_url=http://192.168.56.108/plg
 wct_repository_url=http://192.168.56.108/wct
 sdk_repository_url=http://192.168.56.108/sdk8075
+
+was_fixes_repository_url=http://192.168.56.108/fp_was
 ihs_fixes_repository_url=http://192.168.56.108/fp_ihs
 wct_fixes_repository_url=http://192.168.56.108/fp_wct
 
@@ -22,9 +23,6 @@ wct_fixes_repository_url=http://192.168.56.108/fp_wct
 [all:vars]
 was_username=wasadmin
 was_password=wasadmin
-
-was_repository_url=http://192.168.56.108/was9
-was_fixes_repository_url=http://192.168.56.108/fp_was
 
 
 [dmgr:vars]

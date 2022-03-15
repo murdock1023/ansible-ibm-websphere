@@ -1,0 +1,9 @@
+---
+- name:                    Install WebSphere Application Server - Network Deployment
+  hosts:                   dmgr
+  #  serial:                  2
+  become:                  true
+  roles:
+    - ../roles/was-nd-install
+    - ../roles/was-nd-fix-install
+
