@@ -1,0 +1,6 @@
+---
+- name:                    Setup HTTP Servers on DMGR
+  hosts:                   dmgr
+  become:                  true
+  roles:
+    - ../roles/was-dmgr-config-webserver

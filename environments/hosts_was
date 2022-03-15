@@ -29,5 +29,9 @@ was_password=wasadmin
 
 
 [nodes:vars]
-was_nodename=wasNode02
+#was_nodename=wasNode02
 dmgr_hostname=was
+
+[ihs_servers:vars]
+ihs_password=ihspassword
+was_hostname=was

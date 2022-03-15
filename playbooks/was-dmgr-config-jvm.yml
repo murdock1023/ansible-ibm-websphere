@@ -7,4 +7,4 @@
   hosts:                   dmgr
   become:                  true
   roles:
-    - ../../roles/was-dmgr-config-jvm
+    - ../roles/was-dmgr-config-jvm
