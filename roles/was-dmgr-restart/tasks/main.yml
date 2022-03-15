@@ -10,9 +10,9 @@
   changed_when:  cout.rc == 0
   when:          dmgr_is_running.rc == 0
 
-- name:          Wait 10 seconds to start DMGR
+- name:          Wait 30 seconds to start DMGR
   pause:
-    seconds:     10
+    seconds:     30
 
 - name:          "Is dmgr Running?"
   shell:         "ps -p `cat '{{ __was_install_location }}/profiles/{{ __profile_name }}/logs/dmgr/dmgr.pid'` > /dev/null"
