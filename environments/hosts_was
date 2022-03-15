@@ -1,34 +1,32 @@
 [dmgr]
 was
 
-[nodes]
-was
+[was_servers]
+app
 
 [ihs_servers]
-was
+web
 
 [all:vars]
-iim_repository_url=http://192.168.56.108/iim
-was_repository_url=http://192.168.56.108/was9
-ihs_repository_url=http://192.168.56.108/ihs
-plg_repository_url=http://192.168.56.108/plg
-wct_repository_url=http://192.168.56.108/wct
-sdk_repository_url=http://192.168.56.108/sdk8075
+iim_repository_url=http://192.168.56.108:81/iim
+was_repository_url=http://192.168.56.108:81/was9
+ihs_repository_url=http://192.168.56.108:81/ihs
+plg_repository_url=http://192.168.56.108:81/plg
+wct_repository_url=http://192.168.56.108:81/wct
+sdk_repository_url=http://192.168.56.108:81/sdk8075
 
-was_fixes_repository_url=http://192.168.56.108/fp_was
-ihs_fixes_repository_url=http://192.168.56.108/fp_ihs
-wct_fixes_repository_url=http://192.168.56.108/fp_wct
-
+was_fixes_repository_url=http://192.168.56.108:81/fp_was
+ihs_fixes_repository_url=http://192.168.56.108:81/fp_ihs
+wct_fixes_repository_url=http://192.168.56.108:81/fp_wct
 
 [all:vars]
 was_username=wasadmin
 was_password=wasadmin
-
+ihs_password=ihspassword
 
 [dmgr:vars]
 
-
-[nodes:vars]
+[was_servers:vars]
 #was_nodename=wasNode02
 dmgr_hostname=was
 

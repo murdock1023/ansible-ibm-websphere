@@ -1,0 +1,12 @@
+---
+#- name:                    Restart AdminCtl
+#  hosts:                   ihs_servers
+#  become:                  true
+#  roles:
+#    - roles/ibm-http-adminctl-restart
+
+- name:                    Starts HTTP Servers
+  hosts:                   ihs_servers
+  become:                  true
+  roles:
+    - roles/ibm-http-server-restart

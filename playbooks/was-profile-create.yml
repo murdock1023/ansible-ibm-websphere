@@ -4,7 +4,7 @@
 #
 ---
 - name:                    Create Custom Profile
-  hosts:                   nodes
+  hosts:                   was_servers
   become:                  true
   roles:
     - ../roles/was-profile-create

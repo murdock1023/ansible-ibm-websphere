@@ -1,6 +1,7 @@
 ---
-__was_fix_tmp_dir:              "{{ tmp_dir | default('/opt/IBM/Binaries') }}/was_fixes"
-__logs_dir:             "{{ tmp_dir | default('/opt/IBM/Binaries') }}/logs"
+__tmp_dir:              "{{ tmp_dir | default('/opt/IBM/Binaries') }}"
+__was_fix_tmp_dir:      "{{ __tmp_dir }}/was_fixes"
+__logs_dir:             "{{ __tmp_dir }}/logs"
 __iim_install_location: "{{ iim_install_location  | default('/opt/IBM/InstallationManager') }}"
 __was_install_location: "{{ was_install_location  | default('/opt/IBM/WebSphere/AppServer') }}"
 __imshared_location:    "{{ imshared_location  | default('/opt/IBM/IMShared') }}"
@@ -12,7 +13,7 @@ __tpl_file:             "was_nd_fixes.rsp.j2"
 __was_version:          "{{ was_version | default('v90') }}"
 
 __this_version:         "{{ was_fp_version | default( __was_fp_version_latest ) }}"
-__was_fix_files:           "{{ was_fp_files | default( __was_fp_files_latest ) }}"
+__was_fix_files:        "{{ was_fp_files | default( __was_fp_files_latest ) }}"
 __version_check:        "Updated to com.ibm.websphere.ND.v90_{{ __this_version }}"
 __product_id:           "\"id='com.ibm.websphere.ND.v90' version='{{ __this_version }}'\""
 
